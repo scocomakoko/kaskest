@@ -6,13 +6,6 @@ namespace kaskest.Chats
     {
         public string ChatId = Guid.NewGuid().ToString();
 
-        private IEnumerable<BasicMessage> _messages = [];
-
-        public IEnumerable<BasicMessage> Messages => _messages;
-
-        public virtual void AddMessage(BasicMessage message)
-        {
-            _messages = Messages.Append(message);
-        }
+        public IEnumerable<BasicMessage> Messages { get; set; } = [];
     }
 }

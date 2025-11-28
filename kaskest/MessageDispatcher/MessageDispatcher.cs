@@ -21,7 +21,7 @@ namespace kaskest.MessageDispatcher
         {
             if (!ShouldSendMessageToChat(chat, targetChats)) return;
 
-            chat.AddMessage(message);
+            chat.Messages = chat.Messages.Append(message);
         }
 
         private static bool ShouldSendMessageToChat(BasicChat chat, string[] targetChats)
