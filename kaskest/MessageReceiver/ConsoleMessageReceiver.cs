@@ -28,11 +28,6 @@ namespace kaskest.MessageReceiver
             ReceiveMessage(message, [chatid]);
         }
 
-        public Task StopAsync(CancellationToken ct = default)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Subscribe(IMessageDispatcher dispatcher)
         {
             dispatch += dispatcher.DispatchMessage;

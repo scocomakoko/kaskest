@@ -6,8 +6,6 @@ namespace kaskest.MessageReceiver
     {
         void Start(CancellationToken ct = default);
 
-        Task StopAsync(CancellationToken ct = default);
-
         void Subscribe(IMessageDispatcher dispatcher);
     }
 }
