@@ -12,7 +12,7 @@ namespace kaskest.Displayer
 
             foreach (var message in messages)
             {
-                var stream = message.GetMessageContent();
+                var stream = message.MessageContent;
                 stream.Position = 0;
                 using var reader = new StreamReader(stream, Encoding.UTF8, leaveOpen: true);
                 string text = reader.ReadToEnd();

@@ -4,7 +4,7 @@ namespace kaskest.Chats
 {
     public class BasicChat()
     {
-        public string ChatId = Guid.NewGuid().ToString();
+        public string ChatId { get; set; } = Guid.NewGuid().ToString();
 
         public IEnumerable<BasicMessage> Messages { get; set; } = [];
     }

@@ -2,7 +2,7 @@
 
 namespace kaskest.Displayer
 {
-    internal interface IDisplayer
+    public interface IDisplayer
     {
         public void DisplayChat(BasicChat chat);
     }

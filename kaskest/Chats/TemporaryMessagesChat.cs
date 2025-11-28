@@ -4,7 +4,7 @@ namespace kaskest.Chats
 {
     public class TemporaryMessagesChat(TimeSpan messageRetentionDuration) : BasicChat()
     {
-        public TimeSpan MessageRetentionDuration = messageRetentionDuration;
+        public TimeSpan MessageRetentionDuration { get; set; } = messageRetentionDuration;
 
         public new IEnumerable<BasicMessage> Messages
         {

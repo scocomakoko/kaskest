@@ -2,22 +2,12 @@
 {
     public class BasicMessage(string senderId, Stream messageContent)
     {
-        public readonly string MessageId = Guid.NewGuid().ToString();
+        public string MessageId { get; } = Guid.NewGuid().ToString();
 
-        public readonly DateTime Timestamp = DateTime.UtcNow;
+        public DateTime Timestamp { get; } = DateTime.UtcNow;
 
-        public readonly string SenderId = senderId;
+        public string SenderId { get; } = senderId;
 
-        private Stream MessageContent = messageContent;
-
-        public virtual void SetMessageContent(Stream messageContent)
-        {
-            MessageContent = messageContent;
-        }
-
-        public virtual Stream GetMessageContent()
-        {
-            return MessageContent;
-        }
+        public Stream MessageContent { get; set; } = messageContent;
     }
 }

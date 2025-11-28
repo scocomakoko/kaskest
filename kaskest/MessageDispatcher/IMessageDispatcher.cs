@@ -3,11 +3,10 @@ using kaskest.Messages;
 
 namespace kaskest.MessageDispatcher
 {
-    internal interface IMessageDispatcher
+    public interface IMessageDispatcher
     {
-        public void DispatchMessage(BasicMessage message, string[] targetChats);
+        public Action<BasicMessage, string[]> DispatchNewMessage { get; set; }
 
         public void Subscribe(BasicChat chat);
-
     }
 }
