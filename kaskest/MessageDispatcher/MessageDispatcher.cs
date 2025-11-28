@@ -5,9 +5,9 @@ namespace kaskest.MessageDispatcher
 {
     internal class MessageDispatcher : IMessageDispatcher
     {
-        private Action<BaseMessage, string[]> dispatchNewMessage = (baseMessage, targetChats) => { };
+        private Action<BasicMessage, string[]> dispatchNewMessage = (baseMessage, targetChats) => { };
 
-        public void DispatchMessage(BaseMessage message, string[] targetChats)
+        public void DispatchMessage(BasicMessage message, string[] targetChats)
         {
             dispatchNewMessage.Invoke(message, targetChats);
         }
@@ -17,7 +17,7 @@ namespace kaskest.MessageDispatcher
             dispatchNewMessage += (message, targetChats) => DispatchMessageToChat(chat, message, targetChats);
         }
 
-        private static void DispatchMessageToChat(BaseChat chat, BaseMessage message, string[] targetChats)
+        private static void DispatchMessageToChat(BaseChat chat, BasicMessage message, string[] targetChats)
         {
             if (!ShouldSendMessageToChat(chat, targetChats)) return;
 

@@ -6,9 +6,9 @@ namespace kaskest.MessageReceiver
 {
     internal class ConsoleMessageReceiver : IMessageReceiver
     {
-        private Action<BaseMessage, string[]> dispatch = (baseMessage, targetChats) => { };
+        private Action<BasicMessage, string[]> dispatch = (baseMessage, targetChats) => { };
 
-        public void ReceiveMessage(BaseMessage message, string[] targetChats)
+        public void ReceiveMessage(BasicMessage message, string[] targetChats)
         {
             dispatch.Invoke(message, targetChats);
         }
@@ -23,7 +23,7 @@ namespace kaskest.MessageReceiver
             if (messageText == null) return;
 
             var messageStream = new MemoryStream(Encoding.UTF8.GetBytes(messageText));
-            var message = new Message("ConsoleUser", messageStream);
+            var message = new BasicMessage("ConsoleUser", messageStream);
 
             ReceiveMessage(message, [chatid]);
         }

@@ -5,7 +5,7 @@ namespace kaskest.MessageDispatcher
 {
     internal interface IMessageDispatcher
     {
-        public void DispatchMessage(BaseMessage message, string[] targetChats);
+        public void DispatchMessage(BasicMessage message, string[] targetChats);
 
         public void Subscribe(BaseChat chat);
 

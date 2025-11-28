@@ -8,7 +8,7 @@ namespace kaskest.Chats
 
         public TemporaryMessagesChat() : this(TimeSpan.FromMinutes(10)) { }
 
-        public override IEnumerable<BaseMessage> GetMessages()
+        public override IEnumerable<BasicMessage> GetMessages()
         {
             return Messages.Where(message => message.Timestamp > DateTime.UtcNow.Subtract(MessageRetentionDuration));
         }
