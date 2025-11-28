@@ -1,0 +1,25 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="GbbX-34_Q2kBJJacmgqM">
+    <mxGraphModel dx="1141" dy="711" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="14qI_kvEGVaCCyazbwxv-7" value="בשביל סודיות או שטות אחרת udpשימוש ב" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="14qI_kvEGVaCCyazbwxv-11" value="DAL" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="385" y="610" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="14qI_kvEGVaCCyazbwxv-12" value="UI" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="460" y="170" width="320" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="14qI_kvEGVaCCyazbwxv-13" value="BL" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="170" width="320" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="14qI_kvEGVaCCyazbwxv-15" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="490" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
