@@ -6,7 +6,22 @@ namespace kaskest.Chats
     {
         public TimeSpan MessageRetentionDuration = messageRetentionDuration;
 
-        public new IEnumerable<BasicMessage> Messages => base.Messages.Where(message => message.Timestamp > DateTime.UtcNow.Subtract(MessageRetentionDuration));
+        public new IEnumerable<BasicMessage> Messages
+        {
+            get
+            {
+                return base.Messages
+                    .Where(message =>
+                        message.Timestamp > DateTime.UtcNow.Subtract(MessageRetentionDuration));
+            }
+            set
+            {
+                var expiredMessages = base.Messages
+                    .Where(message => message.Timestamp <= DateTime.UtcNow.Subtract(MessageRetentionDuration)).ToList();
+
+                base.Messages = expiredMessages.Concat(value);
+            }
+        }
 
         public TemporaryMessagesChat() : this(TimeSpan.FromMinutes(10)) { }
     }
