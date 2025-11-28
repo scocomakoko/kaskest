@@ -1,10 +1,18 @@
-﻿namespace kaskest
+﻿using kaskest.Chats;
+using kaskest.Displayer;
+using kaskest.MessageDispatcher;
+using kaskest.MessageReceiver;
+
+var dispacher = new MessageDispatcher();
+var chat = new TemporaryMessagesChat();
+dispacher.Subscribe(chat);
+var receiver = new ConsoleMessageReceiver();
+receiver.Subscribe(dispacher);
+Console.WriteLine($"current chat id: {chat.ChatId}");
+var displayer = new ConsoleDisplayer();
+
+while (true)
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
+    receiver.Start();
+    displayer.DisplayChat(chat);
 }
