@@ -5,10 +5,10 @@ namespace kaskest.Displayer
 {
     internal class ConsoleDisplayer : IDisplayer
     {
-        public void DisplayChat(BaseChat chat)
+        public void DisplayChat(BasicChat chat)
         {
             Console.Clear();
-            var messages = chat.GetMessages();
+            var messages = chat.Messages;
 
             foreach (var message in messages)
             {

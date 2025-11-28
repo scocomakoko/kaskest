@@ -1,6 +1,6 @@
 ﻿namespace kaskest.Messages
 {
-    internal class BasicMessage(string senderId, Stream messageContent)
+    public class BasicMessage(string senderId, Stream messageContent)
     {
         public readonly string MessageId = Guid.NewGuid().ToString();
 

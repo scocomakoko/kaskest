@@ -12,19 +12,19 @@ namespace kaskest.MessageDispatcher
             dispatchNewMessage.Invoke(message, targetChats);
         }
 
-        public void Subscribe(BaseChat chat)
+        public void Subscribe(BasicChat chat)
         {
             dispatchNewMessage += (message, targetChats) => DispatchMessageToChat(chat, message, targetChats);
         }
 
-        private static void DispatchMessageToChat(BaseChat chat, BasicMessage message, string[] targetChats)
+        private static void DispatchMessageToChat(BasicChat chat, BasicMessage message, string[] targetChats)
         {
             if (!ShouldSendMessageToChat(chat, targetChats)) return;
 
             chat.AddMessage(message);
         }
 
-        private static bool ShouldSendMessageToChat(BaseChat chat, string[] targetChats)
+        private static bool ShouldSendMessageToChat(BasicChat chat, string[] targetChats)
         {
             return targetChats.Contains(chat.ChatId);
         }

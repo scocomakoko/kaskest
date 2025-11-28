@@ -7,7 +7,7 @@ namespace kaskest.MessageDispatcher
     {
         public void DispatchMessage(BasicMessage message, string[] targetChats);
 
-        public void Subscribe(BaseChat chat);
+        public void Subscribe(BasicChat chat);
 
     }
 }

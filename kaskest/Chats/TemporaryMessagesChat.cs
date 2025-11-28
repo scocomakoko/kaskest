@@ -2,15 +2,12 @@
 
 namespace kaskest.Chats
 {
-    internal class TemporaryMessagesChat(TimeSpan messageRetentionDuration) : BaseChat()
+    public class TemporaryMessagesChat(TimeSpan messageRetentionDuration) : BasicChat()
     {
         public TimeSpan MessageRetentionDuration = messageRetentionDuration;
 
-        public TemporaryMessagesChat() : this(TimeSpan.FromMinutes(10)) { }
+        public new IEnumerable<BasicMessage> Messages => base.Messages.Where(message => message.Timestamp > DateTime.UtcNow.Subtract(MessageRetentionDuration));
 
-        public override IEnumerable<BasicMessage> GetMessages()
-        {
-            return Messages.Where(message => message.Timestamp > DateTime.UtcNow.Subtract(MessageRetentionDuration));
-        }
+        public TemporaryMessagesChat() : this(TimeSpan.FromMinutes(10)) { }
     }
 }
